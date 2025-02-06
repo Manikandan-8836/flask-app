@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Drawing Sent to Robot!</h2>
+<div class="alert alert-success">
+    Coordinates successfully transmitted to the robot
+</div>
+<a href="{{ url_for('welcome') }}" class="btn btn-primary">Start Over</a>
+{% endblock %}

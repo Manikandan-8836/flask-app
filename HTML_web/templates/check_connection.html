@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Connection Status</h2>
+<div class="alert alert-{% if connected %}success{% else %}danger{% endif %}">
+    Robot is {% if not connected %}not {% endif %}connected
+</div>
+
+{% if connected %}
+    <a href="{{ url_for('send_to_robot') }}" class="btn btn-success">Send to Robot</a>
+{% else %}
+    <button class="btn btn-danger" disabled>Cannot Send - No Connection</button>
+{% endif %}
+{% endblock %}
